@@ -5,7 +5,7 @@ namespace PrimeNet.Infrastructure
 {
     public class CompanyDbContext : DbContext
     {
-        private static string _connStr = @" Server=127.0.0.1,1433;Database=PrimeNet;User Id=SA;Password=p@55W0rd";
+        private static string _connStr = @" Server=127.0.0.1,1433;Database=PrimeNet;User Id=SA;Password=p@55W0rd;TrustServerCertificate=True";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,8 +32,8 @@ namespace PrimeNet.Infrastructure
                 );
         }
 
-        public DbSet<Company>? Companys { get; set; }
+        public DbSet<Company>? Companiess { get; set; }
 
-        public DbSet<Movie>? Videos { get; set; }
+        public DbSet<Movie>? Movies { get; set; }
     }
 }

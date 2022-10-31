@@ -84,7 +84,7 @@ namespace PrimeNet.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Companys");
+                    b.ToTable("Companies");
                 });
 
             modelBuilder.Entity("PrimeNet.Domain.Movie", b =>
@@ -117,7 +117,7 @@ namespace PrimeNet.Infrastructure.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("Videos");
+                    b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("PrimeNet.Domain.MovieActor", b =>

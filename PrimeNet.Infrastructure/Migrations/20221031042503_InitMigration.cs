@@ -30,7 +30,7 @@ namespace PrimeNet.Infrastructure.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Companys",
+                name: "Companies",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -44,11 +44,11 @@ namespace PrimeNet.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Companys", x => x.Id);
+                    table.PrimaryKey("PK_Companies", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Videos",
+                name: "Movies",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -62,11 +62,11 @@ namespace PrimeNet.Infrastructure.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Videos", x => x.Id);
+                    table.PrimaryKey("PK_Movies", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Videos_Companys_CompanyId",
+                        name: "FK_Movies_Companies_CompanyId",
                         column: x => x.CompanyId,
-                        principalTable: "Companys",
+                        principalTable: "Companies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -93,9 +93,9 @@ namespace PrimeNet.Infrastructure.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_MovieActor_Videos_MovieId",
+                        name: "FK_MovieActor_Movies_MovieId",
                         column: x => x.MovieId,
-                        principalTable: "Videos",
+                        principalTable: "Movies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -118,9 +118,9 @@ namespace PrimeNet.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_Productor", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Productor_Videos_MovieId",
+                        name: "FK_Productor_Movies_MovieId",
                         column: x => x.MovieId,
-                        principalTable: "Videos",
+                        principalTable: "Movies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -137,8 +137,8 @@ namespace PrimeNet.Infrastructure.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
-                name: "IX_Videos_CompanyId",
-                table: "Videos",
+                name: "IX_Movies_CompanyId",
+                table: "Movies",
                 column: "CompanyId");
         }
 
@@ -155,10 +155,10 @@ namespace PrimeNet.Infrastructure.Migrations
                 name: "Actor");
 
             migrationBuilder.DropTable(
-                name: "Videos");
+                name: "Movies");
 
             migrationBuilder.DropTable(
-                name: "Companys");
+                name: "Companies");
         }
     }
 }
