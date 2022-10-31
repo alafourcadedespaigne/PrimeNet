@@ -1,13 +1,13 @@
 using PrimeNet.Domain;
 using MediatR;
 
-namespace PrimeNet.Application.Features.Videos.Queries.GetVideosList;
+namespace PrimeNet.Application.Features.Movies.Queries.GetMoviesList;
 
-public class GetVideosListQuery:IRequest<List<VideosVm>>
+public class GetMoviesListQuery:IRequest<List<MoviesVm>>
 {
     public string Username { get; set; } = String.Empty;
 
-    public GetVideosListQuery(string username)
+    public GetMoviesListQuery(string username)
     {
         Username = username ?? throw new ArgumentNullException(nameof(username));
     }

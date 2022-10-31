@@ -1,6 +1,6 @@
-namespace PrimeNet.Application.Features.Videos.Queries.GetVideosList;
+namespace PrimeNet.Application.Features.Movies.Queries.GetMoviesList;
 
-public class VideosVm
+public class MoviesVm
 {
     public string? Name { get; set; }
 

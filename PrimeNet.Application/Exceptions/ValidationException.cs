@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace CleanArchitectureLab.Application.Exceptions;
+namespace PrimeNet.Application.Exceptions;
 
 public class ValidationException:ApplicationException
 {

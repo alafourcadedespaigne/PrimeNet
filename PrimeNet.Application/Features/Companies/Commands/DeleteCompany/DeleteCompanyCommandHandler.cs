@@ -2,39 +2,39 @@ using AutoMapper;
 using PrimeNet.Application.Contracts.Infrastructure;
 using PrimeNet.Application.Contracts.Persistence;
 using PrimeNet.Application.Exceptions;
-using PrimeNet.Application.Features.Streamers.Commands.CreateStreamer;
+using PrimeNet.Application.Features.Companies.Commands.CreateCompany;
 using PrimeNet.Application.Model;
 using PrimeNet.Domain;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace PrimeNet.Application.Features.Streamers.Commands.DeleteStreamer;
+namespace PrimeNet.Application.Features.Companies.Commands.DeleteCompany;
 
-public class DeleteStreamerCommandHandler : IRequestHandler<DeleteStreamerCommand>
+public class DeleteCompanyCommandHandler : IRequestHandler<DeleteCompanyCommand>
 {
-    private readonly IStreamerRepository _streamerRepository;
+    private readonly ICompanyRepository _companyRepository;
     private readonly IMapper _mapper;
-    private readonly ILogger<DeleteStreamerCommandHandler> _logger;
+    private readonly ILogger<DeleteCompanyCommandHandler> _logger;
 
-    public DeleteStreamerCommandHandler(IStreamerRepository streamerRepository, IMapper mapper,
-        ILogger<DeleteStreamerCommandHandler> logger)
+    public DeleteCompanyCommandHandler(ICompanyRepository companyRepository, IMapper mapper,
+        ILogger<DeleteCompanyCommandHandler> logger)
     {
-        _streamerRepository = streamerRepository;
+        _companyRepository = companyRepository;
         _mapper = mapper;
         _logger = logger;
     }
 
 
-    public async Task<Unit> Handle(DeleteStreamerCommand request, CancellationToken cancellationToken)
+    public async Task<Unit> Handle(DeleteCompanyCommand request, CancellationToken cancellationToken)
     {
-        var streamerToDelete = await _streamerRepository.GetByIdAsync(request.Id);
-        if (streamerToDelete == null)
+        var companyToDelete = await _companyRepository.GetByIdAsync(request.Id);
+        if (companyToDelete == null)
         {
-            _logger.LogError($"{request.Id} company don't exist in the system");
+            _logger.LogError($"{request.Id} Company don't exist in the system");
             throw new NotFoundException(nameof(Company), request.Id);
         }
 
-        await _streamerRepository.DeleteAsync(streamerToDelete);
+        await _companyRepository.DeleteAsync(companyToDelete);
         _logger.LogInformation($"The Company with Id: {request.Id} was deleted successfully");
         return Unit.Value;
     }

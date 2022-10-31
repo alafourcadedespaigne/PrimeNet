@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace PrimeNet.Application.Features.Companys.Commands.UpdateCompany;
+namespace PrimeNet.Application.Features.Companies.Commands.UpdateCompany;
 
 public class UpdateCompanyCommandValidator: AbstractValidator<UpdateCompanyCommand>
 {

@@ -2,22 +2,22 @@ using AutoMapper;
 using PrimeNet.Application.Contracts.Persistence;
 using MediatR;
 
-namespace PrimeNet.Application.Features.Videos.Queries.GetVideosList;
+namespace PrimeNet.Application.Features.Movies.Queries.GetMoviesList;
 
-public class GetVideosListQueryhandler: IRequestHandler<GetVideosListQuery, List<VideosVm>>
+public class GetMoviesListQueryhandler: IRequestHandler<GetMoviesListQuery, List<MoviesVm>>
 {
-    private readonly IVideoRepository _videoRepository;
+    private readonly IMovieRepository _videoRepository;
     private readonly IMapper _mapper;
 
-    public GetVideosListQueryhandler(IVideoRepository videoRepository, IMapper mapper)
+    public GetMoviesListQueryhandler(IMovieRepository videoRepository, IMapper mapper)
     {
         _videoRepository = videoRepository;
         _mapper = mapper;
     }
 
-    public async Task<List<VideosVm>> Handle(GetVideosListQuery request, CancellationToken cancellationToken)
+    public async Task<List<MoviesVm>> Handle(GetMoviesListQuery request, CancellationToken cancellationToken)
     {
-        var videoList = _videoRepository.GetVideoByUserName(request.Username);
-        return _mapper.Map<List<VideosVm>>(videoList);
+        var videoList = _videoRepository.GetMovieByUserName(request.Username);
+        return _mapper.Map<List<MoviesVm>>(videoList);
     }
 }

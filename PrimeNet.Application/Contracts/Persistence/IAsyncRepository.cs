@@ -1,8 +1,8 @@
 using System.Linq.Expressions;
-using CleanArchitectureLab.Domain;
-using CleanArchitectureLab.Domain.Common;
+using PrimeNet.Domain;
+using PrimeNet.Domain.Common;
 
-namespace CleanArchitectureLab.Application.Contracts.Persistence;
+namespace PrimeNet.Application.Contracts.Persistence;
 
 public interface IAsyncRepository<T> where T : BaseDomainModel
 {

@@ -1,4 +1,4 @@
-namespace CleanArchitectureLab.Application.Model;
+namespace PrimeNet.Application.Model;
 
 public class Email
 {

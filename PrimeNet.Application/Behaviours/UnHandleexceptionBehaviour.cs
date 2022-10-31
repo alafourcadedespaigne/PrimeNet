@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace CleanArchitectureLab.Application.Behaviours;
+namespace PrimeNet.Application.Behaviours;
 
 public class UnHandleexceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : IRequest<TResponse>
