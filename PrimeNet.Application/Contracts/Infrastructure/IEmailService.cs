@@ -1,6 +1,6 @@
-using CleanArchitectureLab.Application.Model;
+using PrimeNet.Application.Model;
 
-namespace CleanArchitectureLab.Application.Contracts.Infrastructure;
+namespace PrimeNet.Application.Contracts.Infrastructure;
 
 public interface IEmailService
 {

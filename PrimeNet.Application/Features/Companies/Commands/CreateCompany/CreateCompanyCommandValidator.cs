@@ -1,10 +1,10 @@
 using FluentValidation;
 
-namespace PrimeNet.Application.Features.Streamers.Commands.CreateStreamer;
+namespace PrimeNet.Application.Features.Companies.Commands.CreateCompany;
 
-public class CreateStreamerCommandValidator: AbstractValidator<CreateStreamerCommand>
+public class CreateCompanyCommandValidator: AbstractValidator<CreateCompanyCommand>
 {
-    public CreateStreamerCommandValidator()
+    public CreateCompanyCommandValidator()
     {
         RuleFor(p => p.Name)
             .NotEmpty().WithMessage("{Name} cannot be blank")
