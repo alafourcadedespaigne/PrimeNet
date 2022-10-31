@@ -1,6 +1,6 @@
 # PrimeNet (Amazon Prime Clone)
 
-## This Laboratory is to show the most important aspects of the implementation of a Hexagonal Architecture with the technology. NET
+## This Laboratory is to show the most important aspects of the implementation of a Hexagonal Architecture with the . NET technology
 
 ### Solution Details
 
