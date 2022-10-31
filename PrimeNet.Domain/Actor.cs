@@ -1,14 +1,14 @@
-using CleanArchitectureLab.Domain.Common;
+using PrimeNet.Domain.Common;
 
-namespace CleanArchitectureLab.Domain;
+namespace PrimeNet.Domain;
 
 public class Actor:BaseDomainModel
 {
     public Actor()
     {
-        Videos = new HashSet<Video>();
+        Movies = new HashSet<Movie>();
     }
     public string? Name { get; set; }
     public string? LastName { get; set; }
-    public virtual ICollection<Video> Videos { get; set; }
+    public virtual ICollection<Movie> Movies { get; set; }
 }

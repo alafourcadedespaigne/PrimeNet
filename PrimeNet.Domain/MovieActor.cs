@@ -1,9 +1,10 @@
-using CleanArchitectureLab.Domain.Common;
+using PrimeNet.Domain.Common;
+using PrimeNet.Domain.Common;
 
-namespace CleanArchitectureLab.Domain;
+namespace PrimeNet.Domain;
 
-public class VideoActor : BaseDomainModel
+public class MovieActor : BaseDomainModel
 {
-    public int VideoId { get; set; }
+    public int MovieId { get; set; }
     public int ActorId { get; set; }
 }

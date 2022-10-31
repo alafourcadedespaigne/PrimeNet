@@ -1,13 +1,13 @@
-using CleanArchitectureLab.Domain.Common;
+using PrimeNet.Domain.Common;
 
-namespace CleanArchitectureLab.Domain;
+namespace PrimeNet.Domain;
 
-public class Director:BaseDomainModel
+public class Productor:BaseDomainModel
 {
     public string Name { get; set; }
     public string LastName { get; set; }
 
-    public int VideoId { get; set; }
+    public int MovieId { get; set; }
 
-    public virtual Video? Video { get; set; }
+    public virtual Movie? Movie { get; set; }
 }

@@ -1,21 +1,21 @@
-﻿using CleanArchitectureLab.Domain.Common;
+﻿using PrimeNet.Domain.Common;
 
-namespace CleanArchitectureLab.Domain
+namespace PrimeNet.Domain
 {
-    public class Video : BaseDomainModel
+    public class Movie : BaseDomainModel
     {
-        public Video()
+        public Movie()
         {
             Actors = new HashSet<Actor>();
         }
         public string? Name { get; set; }
 
-        public int StreamerId { get; set; }
+        public int CompanyId { get; set; }
 
-        public virtual Streamer? Streamer { get; set; }
+        public virtual Company? Company { get; set; }
 
         public virtual ICollection<Actor> Actors { get; set; }
         
-        public virtual Director? Director { get; set; }
+        public virtual Productor? Productor { get; set; }
     }
 }

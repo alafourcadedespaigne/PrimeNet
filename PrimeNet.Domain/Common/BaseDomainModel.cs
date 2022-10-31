@@ -1,4 +1,4 @@
-namespace CleanArchitectureLab.Domain.Common;
+namespace PrimeNet.Domain.Common;
 
 public abstract class BaseDomainModel
 {
