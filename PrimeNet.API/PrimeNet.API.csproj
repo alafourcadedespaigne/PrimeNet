@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PrimeNet.Application\PrimeNet.Application.csproj" />
+      <ProjectReference Include="..\PrimeNet.Infrastructure\PrimeNet.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>
